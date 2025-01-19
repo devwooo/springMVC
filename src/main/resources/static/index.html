@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<script>
+    function hello() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "/hello.json", true);
+        xhr.onload = function() {
+            document.getElementById("app").innerHTML = this.responseText;
+        }
+        xhr.send();
+    }
+</script>
+<body>
+<div id="app">AA</div>
+<button onclick="hello()">버튼</button>
+</body>
+</html>
