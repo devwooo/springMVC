@@ -20,5 +20,4 @@ public class JsonController {
 class Hello {
     private String message;
     private int count;
-
 }
