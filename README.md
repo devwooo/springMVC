@@ -1,4 +1,9 @@
+JSP 사용하려면 
+tomcat-embed-jasper
+jslt 라이브러리를 꼭 추가 해줘야한다
+jsp 인식못한다 
 
+-------------------------------------------------------------------
 
 
 Dispacher Servlet 
@@ -97,3 +102,41 @@ View Template
 
 -------------------------------------------------------------------
 if문과 다형성 관련 - 중요한 개념으로 공부해야된다.
+-------------------------------------------------------------------
+등록된 빈이 없다면 DispatcherServlet.properties 에 등록된 기본 빈을 사용한다.
+special bean
+    HandlerMapping 
+     - RequestMappingHandlerMapping (which supports @RequestMapping)
+       - 요청을 핸들러에 매핑하고, 사전 및 사후 처리를 위한 인터셉터 목록과 함께 매핑합니다.
+       - SimpleUrlHandlerMapping (URI path patterns to handlers) 
+    HandlerAdapter
+    HandlerExceptionResolver
+        - if an exception occurs, it delegate to a chain of HanderlExceptionResolver
+        - SimpleMappingExceptionResolver
+        - DefaultHandlerExceptionResolver
+        - ResponseStatusExceptionResolver
+        - ExceptionHandlerExceptionResolver
+    ViewResolver
+    LocaleResolver, LocaleContextResolver
+        - 프로세스의 요소들이 요청을 처리할때 사용할 로케일을 결정할 수 있게 합니다.
+    ThemeResolver
+        - 태마 리졸버가 요청에 바인딩 되어 뷰와 같은 요소들이 사용할 테마를 결정할 수 있게합니다.
+    MultipartResolver
+        - 멀티파트리졸버를 지정하면 요청이 멀티파트를 검사합니다.
+    FlashMapManager
+
+    HTTP caching 또한 지원해줍니다.
+    WebRequest의 checkNotModified 을 사용해서 처리
+    
+    HandlerInterceptor 
+        - preHandler
+            > true - execution continues
+            > false - handler is not called.
+
+        @ResponseBody, ResponseEntity controller 는 HandlerAdapter에서 처리되기 떄문에 
+        ResponseBodyAdvice를 구현하고 Controller Advice빈으로 선언하거나, RequestMappingHandlerAdapter 설정을해라
+        - postHander
+        - afterCompletion
+    
+
+    

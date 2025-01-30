@@ -1,2 +1,18 @@
 server :
   port: 9090
+
+#
+#spring:
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
+
+logging:
+  level:
+    org:
+      springframework:
+        web : debug
+
+
+
